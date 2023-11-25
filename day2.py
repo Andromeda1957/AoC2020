@@ -38,6 +38,7 @@ def get_password(data):
 
 def main():
     counter = 0
+    counter1 = 0
 
     with open('day2.txt', 'r') as f:
         data = f.read().split()
@@ -47,12 +48,30 @@ def main():
 
         for num in range(len(policy)):
             policy_range = policy[num].split('-')
+            policy_range = [eval(i) for i in policy_range]
             min = policy_range[0]
             max = policy_range[1]
+            letter_counter = 0
+
             if letter[num] in password[num]:
-                print(letter[num], password[num])
+                characters = [*password[num]]
+
+                try:
+                    if letter[num] == characters[min - 1] or letter[num] == characters[max - 1]:
+                        if characters[min - 1] != characters[max - 1]:
+                            counter1 = counter1 + 1
+                except IndexError:
+                    pass
             
-                    
+                for element in characters:
+                    if letter[num] == element:
+                        letter_counter = letter_counter + 1
+            
+            if letter_counter >= min and letter_counter <= max:
+                counter = counter + 1
+
+    print(f'Part1: {counter}')
+    print(f'Part2: {counter1}')
 
 if __name__ == '__main__':
     main()
