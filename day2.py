@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def get_policy(data):
     counter = 0
     policy = []
