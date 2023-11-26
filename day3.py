@@ -18,7 +18,6 @@ def get_slope(lines, x, y):
     counter = 0
     row = 0
     slope = 0
-    
 
     while row + 1 < len(lines):
         counter += x
