@@ -14,10 +14,12 @@ def list_lines(data):
     
     return seperate_lines
 
-def get_slope(lines, x, y):
+def get_slope(x, y):
     counter = 0
     row = 0
     slope = 0
+    data = read_file()
+    lines = list_lines(data)
 
     while row + 1 < len(lines):
         counter += x
@@ -29,13 +31,12 @@ def get_slope(lines, x, y):
     return slope
 
 def main():    
-    data = read_file()
-    lines = list_lines(data)
-    slope1 = get_slope(lines, 3, 1)
-    slope2 = get_slope(lines, 1, 1)
-    slope3 = get_slope(lines, 5, 1)
-    slope4 = get_slope(lines, 7, 1)
-    slope5 = get_slope(lines, 1, 2)
+    
+    slope1 = get_slope(3, 1)
+    slope2 = get_slope(1, 1)
+    slope3 = get_slope(5, 1)
+    slope4 = get_slope(7, 1)
+    slope5 = get_slope(1, 2)
     part1 = slope1
     part2 = slope1 * slope2 * slope3 * slope4 * slope5
     print(f'Part1: {part1}')
