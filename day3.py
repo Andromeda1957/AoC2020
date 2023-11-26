@@ -31,7 +31,6 @@ def get_slope(x, y):
     return slope
 
 def main():    
-    
     slope1 = get_slope(3, 1)
     slope2 = get_slope(1, 1)
     slope3 = get_slope(5, 1)
