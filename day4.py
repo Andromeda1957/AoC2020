@@ -30,19 +30,14 @@ def part_two(data, fields):
     invalid_passports = 0
     
     for field in fields:
-        passport_list = remove_invalid(data, field)
+        remove_invalid(data, field)
 
     for field in fields:
-        passport_list = remove_invalid(data, field)
-        
-    
-
-    print(len(data))
+        remove_invalid(data, field)
 
     return None
 
 def main():
-
     data = read_file()
     fields = ['hcl', 'ecl', 'hgt', 'byr', 'pid', 'eyr', 'iyr']
     part1 = part_one(data, fields)
